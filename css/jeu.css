@@ -1,0 +1,64 @@
+td {
+  height: 80px;
+  width: 80px;
+  margin: 0px;
+  padding: 0px;
+  border: thin solid grey;
+}
+
+table {
+  border-spacing: 0px;
+}
+
+td > div, td > div > div {
+  height: 80px;
+  width: 80px;
+}
+
+.wall {
+  background-color: grey !important;
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+.chemin {
+  border: 2px solid black;
+  box-shadow: 0px 0px 12px black;
+}
+
+.gun1 > .arme, .gun2 > .arme {
+  background-image: url(../img/ray-gun.svg);
+  background-size: contain;
+}
+
+.rifle > .arme {
+  background-image: url(../img/space-arm.svg);
+  background-size: contain;
+}
+
+.bazooka > .arme {
+  background-image: url(../img/bazooka.svg);
+  background-size: contain;
+}
+
+.perso1 > .arme > .perso {
+  background-image: url(../img/topview-cosmonaut1.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.perso2 > .arme > .perso {
+  background-image: url(../img/topview-cosmonaut2.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+td:hover {
+  background-color: #ff000083;
+}
+
+.chemin:hover {
+  background-color: #00ff0083;
+}
