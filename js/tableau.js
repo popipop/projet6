@@ -1,6 +1,9 @@
 const tableau = {
 
+  // Initialiser le tableau de jeu
   init_table () {
+
+    // Générer les cases du tableau de jeu et le tabeau "monTableau"
     const table = $('tbody');
     for (let i = 0; i < 10; i++){
       const ligne = $('<tr>').appendTo(table);
@@ -15,7 +18,7 @@ const tableau = {
       }
     }
 
-    // positionner les murs
+    // Positionner les murs
     let x = 0;
     while (x < 12) {
       let abs = this.getRandomInt(10);
@@ -49,9 +52,10 @@ const tableau = {
       if (cellule.joueur.arme) {
         $(td).addClass(cellule.joueur.arme.nom)
       }
-    }
-    if (cellule.arme) {
-      $(td).addClass(cellule.arme.nom)
+    } else {
+      if (cellule.arme) {
+        $(td).addClass(cellule.arme.nom)
+      }
     }
     if (cellule.chemin) {
       $(td).addClass('chemin');
@@ -59,7 +63,7 @@ const tableau = {
     }
   },
 
-  // Initialiser un joueur dans une cellule au hasard
+  // Afficher un joueur dans une cellule au hasard
   initialiserPerso (perso) {
     let ok = true;
     while (ok) {
@@ -73,7 +77,7 @@ const tableau = {
     }
   },
 
-  // Initialiser une arme dans une cellule au hasard
+  // Afficher une arme dans une cellule au hasard
   initialiserArme (arme) {
     let ok = true;
     while (ok) {
@@ -94,8 +98,8 @@ const tableau = {
         if (monTableau[i][j].chemin) {
           monTableau[i][j].chemin = false;
           this.modifierCellule(monTableau[i][j]);
-          const tr = $('tbody').find('tr')[monTableau[i][j].ord];
-          const td = $(tr)[0].cells[monTableau[i][j].abs];
+          const tr = $('tbody').find('tr')[j];
+          const td = $(tr)[0].cells[i];
           $(td).off('click', this.clickCallback);
         }
       }
@@ -140,12 +144,13 @@ const tableau = {
       for (let j = 0; j < 10; j++) {
         if (monTableau[i][j].joueur === joueur) {
           celJoueur = monTableau[i][j];
-          this.chemins(celJoueur.abs, celJoueur.ord);
+          this.chemins(i, j);
         }
       }
     }
   },
 
+  // Fonction callback déclenchée par un click sur les cases de class "chemin"
   clickCallback () {
     const nvAbs = Number($(this).find('.abs').val());
     const nvOrd = Number($(this).find('.ord').val());
@@ -217,10 +222,7 @@ const tableau = {
   },
 
   // Vérifier la présence d'une nouvelle arme et l'échanger le cas échéant
-  verifierArme (nvAbs, nvOrd, celJoueur) {
-    const abs = nvAbs;
-    const ord = nvOrd;
-    console.log(abs, ord);
+  verifierArme (abs, ord, celJoueur) {
     let arme;
     if (abs === celJoueur.abs) {
       if (ord > celJoueur.ord) {
@@ -243,8 +245,8 @@ const tableau = {
             arme = monTableau[i][ord];
           }
         }
-      }else {
-        for (let i = celJoueur.abs - 1; i < abs - 1; i--) {
+      } else {
+        for (let i = celJoueur.abs - 1; i > abs - 1; i--) {
           if (monTableau[i][ord].arme) {
             arme = monTableau[i][ord];
           }

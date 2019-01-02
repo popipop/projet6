@@ -1,4 +1,4 @@
-// tableau de jeu
+// tableau contenant toutes les infos
 const monTableau = [];
 
 // création des armes
