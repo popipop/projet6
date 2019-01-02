@@ -12,4 +12,4 @@ const perso1 = new Personnage('perso1', gun1, 100);
 const perso2 = new Personnage('perso2', gun2, 100);
 
 // Cellule du joueur actif
-var celJoueur;
+let celJoueur;
