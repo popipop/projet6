@@ -1,3 +1,132 @@
+/* Body */
+
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #e9e9e9;
+  color: darkslategray;
+}
+
+/* Dashboard */
+
+h2 {
+  text-align: center;
+}
+
+#container {
+  display: flex;
+  justify-content: space-around;
+}
+
+#joueurs {
+  width: 480px;
+}
+
+.cadre {
+  border-radius: 10px;
+}
+
+#titre {
+  height: 80px;
+  font-size: 1.4em;
+  font-weight: bold;
+  text-align: center;
+}
+
+#joueur1, #joueur2 {
+  height: 320px;
+  margin-top: 30px;
+  padding: 10px;
+}
+
+#joueur1 {
+  border: 3px solid #298729;
+}
+
+.actif#joueur1 {
+  background-color: #9ae79a;
+
+}
+
+#joueur2 {
+  border: 3px solid #da4924;
+}
+
+.actif#joueur2 {
+  background-color: #e6a898;
+
+}
+
+.infos {
+  display: flex;
+  justify-content: space-around;
+}
+
+.image {
+  height: 80px;
+  width: 80px;
+}
+
+.journal {
+  height: 850px;
+  border: 3px solid darkslategray;
+  width: 240px;
+}
+
+.journal > h3 {
+  text-align: center;
+}
+
+#journal .perso1 {
+  background-color: #9ae79a;
+}
+
+#journal .perso2 {
+  background-color: #e6a898;
+}
+
+.boutons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 10px;
+  border: 2px solid grey;
+  background-color: #e9e9e9;
+  color: grey;
+}
+
+.attaquer {
+  border: 2px solid red;
+  color: red;
+  background-color: rgb(255, 200, 200);
+  box-shadow: 3px 3px 6px gold;
+}
+
+.attaquer:hover {
+  color: rgb(255, 200, 200);
+  background-color: red;
+}
+
+.defendre {
+  border: 2px solid orangered;
+  color: orangered;
+  background-color: rgb(255, 200, 180);
+  box-shadow: 3px 3px 6px gold;
+}
+
+.defendre:hover {
+  color: rgb(255, 200, 180);
+  background-color: orangered;
+}
+
+/* Tableau de jeu */
+
 td {
   height: 80px;
   width: 80px;
@@ -8,6 +137,7 @@ td {
 
 table {
   border-spacing: 0px;
+  background-color: white;
 }
 
 td > div, td > div > div {
@@ -26,29 +156,29 @@ td > div, td > div > div {
   box-shadow: 0px 0px 12px black;
 }
 
-.gun1 > .arme, .gun2 > .arme {
+.gun1 > .arme, .gun2 > .arme, #gun1, #gun2 {
   background-image: url(../img/ray-gun.svg);
   background-size: contain;
 }
 
-.rifle > .arme {
+.rifle > .arme, #rifle {
   background-image: url(../img/space-arm.svg);
   background-size: contain;
 }
 
-.bazooka > .arme {
+.bazooka > .arme, #bazooka {
   background-image: url(../img/bazooka.svg);
   background-size: contain;
 }
 
-.perso1 > .arme > .perso {
+.perso1 > .arme > .perso, #imagePerso1 {
   background-image: url(../img/topview-cosmonaut1.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
 }
 
-.perso2 > .arme > .perso {
+.perso2 > .arme > .perso, #imagePerso2 {
   background-image: url(../img/topview-cosmonaut2.svg);
   background-size: contain;
   background-repeat: no-repeat;

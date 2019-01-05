@@ -6,20 +6,95 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Projet 5 : Jeu en js</title>
   <link rel="stylesheet" href="css/jeu.css">
+  <link rel="stylesheet" href="css/micromodal.css">
 </head>
 <body>
-  <div>
-    <table>
-      <tbody></tbody>
-    </table>
+  <div id="container">
+    <div id="tableau">
+      <table>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div id="joueurs">
+      <div id="titre">
+        <h1>space warrior</h1>
+      </div>
+      <div id="joueur1" class = "cadre">
+        <div class="infos">
+          <div>
+            <h2>Joueur 1</h2>
+            <div id="imagePerso1" class="image"></div>
+            <h2>Vie</h2>
+            <h2 class="vie"></h2>
+          </div>
+          <div>
+            <h2 class="nomArme"></h2>
+            <div class="image imageArme"></div>
+            <h2>Force</h2>
+            <h2 class="force"></h2>
+          </div>
+        </div>
+        <div class="boutons">
+          <div id = "att1" class="btn">Attaquer</div>
+          <div id = "def1" class="btn">Défendre</div>
+        </div>
+      </div>
+      <div id="joueur2" class = "cadre">
+        <div class="infos">
+          <div>
+            <h2>Joueur 2</h2>
+            <div id="imagePerso2" class="image"></div>
+            <h2>Vie</h2>
+            <h2 class="vie"></h2>
+          </div>
+          <div>
+            <h2 class="nomArme"></h2>
+            <div class="image imageArme"></div>
+            <h2>Force</h2>
+            <h2 class="force"></h2>
+          </div>
+        </div>
+        <div class="boutons">
+          <div id = "att2" class="btn">Attaquer</div>
+          <div id = "def2" class="btn">Défendre</div>
+        </div>
+      </div>
+    </div>
+    <div class = "cadre journal">
+      <h3>Journal de combat</h3>
+      <div id="journal"></div>
+    </div>
+  </div>
+
+  <audio src="src/alienblues.wav" loop></audio>
+  <audio src="src/fight.wav"></audio>
+  <audio src="src/battleThemeA.mp3" loop></audio>
+  <audio src="src/ObservingTheStar.ogg" loop></audio>
+  <audio src="src/sfx_deathscream_human5.wav"></audio>
+  <audio src="src/sfx_movement_jump15.wav"></audio>
+  <audio src="src/sfx_wpn_laser6.wav"></audio>
+  <audio src="src/sfx_sounds_impact2.wav"></audio>
+  <audio src="src/sfx_sounds_powerup5.wav"></audio>
+
+  <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+        <main class="modal__content" id="modal-1-content">
+        </main>
+      </div>
+    </div>
   </div>
 
   <!-- Jquery -->
   <script src="https://code.jquery.com/jquery.min.js"></script>
+  <!-- micromodalJS -->
+  <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+  <!-- fichiers JS -->
   <script src="js/cellule.js"></script>
   <script src="js/personnage.js"></script>
   <script src="js/arme.js"></script>
   <script src="js/tableau.js"></script>
+  <script src="js/dashboard.js"></script>
   <script src="js/settings.js"></script>
   <script src="js/controller.js"></script>
 </body>

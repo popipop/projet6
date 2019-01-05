@@ -37,6 +37,9 @@ const tableau = {
     // Positionner les armes
     this.initialiserArme(rifle);
     this.initialiserArme(bazooka);
+
+    // Afficher le tableau de bord
+    dashboard.afficherDashboard();
   },
 
   // Modifier les class d'une cellule
@@ -152,6 +155,7 @@ const tableau = {
 
   // Fonction callback déclenchée par un click sur les cases de class "chemin"
   clickCallback () {
+    saut.play();
     const nvAbs = Number($(this).find('.abs').val());
     const nvOrd = Number($(this).find('.ord').val());
     let celNvArme = tableau.verifierArme(nvAbs, nvOrd, celJoueur);
@@ -160,6 +164,7 @@ const tableau = {
       celNvArme.arme = celJoueur.joueur.arme;
       celJoueur.joueur.arme = nvArme;
       tableau.modifierCellule(celNvArme);
+      SonNvArme.play();
     }
     monTableau[nvAbs][nvOrd].joueur = celJoueur.joueur;
     const nvCelJoueur = monTableau[nvAbs][nvOrd];
@@ -167,8 +172,9 @@ const tableau = {
     tableau.modifierCellule(celJoueur);
     tableau.modifierCellule(nvCelJoueur);
     tableau.effacerChemins();
+    dashboard.afficherJoueur(nvCelJoueur.joueur);
     if (tableau.testVoisin(nvCelJoueur)) {
-      console.log('fight!!');
+      dashboard.lancerCombat(nvCelJoueur.joueur);
     } else {
       if (nvCelJoueur.joueur === perso1) {
         tableau.jouer(perso2);
