@@ -40,6 +40,9 @@ const tableau = {
 
     // Afficher le tableau de bord
     dashboard.afficherDashboard();
+
+    // Lancer la musique
+    theme1.play();
   },
 
   // Modifier les class d'une cellule
@@ -51,13 +54,11 @@ const tableau = {
       $(td).addClass('wall');
     }
     if (cellule.joueur) {
-      $(td).addClass(cellule.joueur.nom)
-      if (cellule.joueur.arme) {
-        $(td).addClass(cellule.joueur.arme.nom)
-      }
+      $(td).addClass(cellule.joueur.nom);
+      $(td).addClass(cellule.joueur.arme.nom);
     } else {
       if (cellule.arme) {
-        $(td).addClass(cellule.arme.nom)
+        $(td).addClass(cellule.arme.nom);
       }
     }
     if (cellule.chemin) {

@@ -5,16 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Projet 5 : Jeu en js</title>
+  <!-- css principal -->
   <link rel="stylesheet" href="css/jeu.css">
+  <!-- css framework micromodal -->
   <link rel="stylesheet" href="css/micromodal.css">
 </head>
+
 <body>
   <div id="container">
+    <!-- Emplacement du tableau de jeu -->
     <div id="tableau">
       <table>
         <tbody></tbody>
       </table>
     </div>
+
+    <!-- Emplacement du tableau de bord -->
     <div id="joueurs">
       <div id="titre">
         <h1>space warrior</h1>
@@ -60,13 +66,16 @@
         </div>
       </div>
     </div>
+
+    <!-- Emplacement du journal de combat-->
     <div class = "cadre journal">
       <h3>Journal de combat</h3>
       <div id="journal"></div>
     </div>
   </div>
 
-  <audio src="src/alienblues.wav" loop></audio>
+  <!-- Fichiers audios -->
+  <audio src="src/alienblues.mp3" loop></audio>
   <audio src="src/fight.wav"></audio>
   <audio src="src/battleThemeA.mp3" loop></audio>
   <audio src="src/ObservingTheStar.ogg" loop></audio>
@@ -76,6 +85,7 @@
   <audio src="src/sfx_sounds_impact2.wav"></audio>
   <audio src="src/sfx_sounds_powerup5.wav"></audio>
 
+  <!-- Modal pour l'image "Fight"-->
   <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
     <div class="modal__overlay" tabindex="-1" data-micromodal-close>
       <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">

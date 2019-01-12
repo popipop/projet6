@@ -19,7 +19,7 @@ const dashboard = {
     }
     if (!combat) {
       $(divJoueur).removeClass('actif');
-      $(autreJoueur).addClass('actif')
+      $(autreJoueur).addClass('actif');
     } else {
       $(divJoueur).addClass('actif');
       $(autreJoueur).removeClass('actif');
@@ -28,7 +28,7 @@ const dashboard = {
     if (joueur.sante > 0) {
       $(vie).text(joueur.sante + ' points');
     } else {
-      $(vie).text('vous êtes morts !')
+      $(vie).text('vous êtes mort !')
     }
     const nomArme = $(divJoueur).find('.nomArme')[0];
     $(nomArme).text('Arme : ' + joueur.arme.nom);
