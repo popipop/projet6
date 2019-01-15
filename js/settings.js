@@ -24,4 +24,4 @@ const deathScream = sons[4];
 const saut = sons[5];
 const laser = sons[6];
 const sonBouclier = sons[7];
-const SonNvArme = sons[8];
+const sonNvArme = sons[8];

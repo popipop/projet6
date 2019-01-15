@@ -8,6 +8,7 @@ const dashboard = {
 
   // Actualiser le tableau de bord du joueur
   afficherJoueur (joueur, combat) {
+    // Choix de la case active
     let divJoueur;
     let autreJoueur;
     if (joueur.nom === 'perso1') {
@@ -24,6 +25,8 @@ const dashboard = {
       $(divJoueur).addClass('actif');
       $(autreJoueur).removeClass('actif');
     }
+
+    // Modifier les informations affichées
     const vie = $(divJoueur).find('.vie')[0];
     if (joueur.sante > 0) {
       $(vie).text(joueur.sante + ' points');
@@ -37,6 +40,8 @@ const dashboard = {
     $(imgArme).attr('id', joueur.arme.nom);
     const force = $(divJoueur).find('.force')[0];
     $(force).text(joueur.arme.force + ' points');
+
+    // Gestion des boutons
     const btnAtt = $(divJoueur).find('.btn')[0];
     const btnDef = $(divJoueur).find('.btn')[1];
     if (combat === 'att') {
@@ -52,7 +57,6 @@ const dashboard = {
   lancerCombat (joueur) {
     theme1.pause();
     sonFight.play();
-    console.log(joueur);
     MicroModal.show('modal-1');
     window.setTimeout(function() {
       MicroModal.close('modal-1');

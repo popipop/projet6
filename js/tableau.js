@@ -142,7 +142,7 @@ const tableau = {
     return Math.floor(Math.random() * Math.floor(max));
   },
 
-  // Déplacer le joueur sur le plateau
+  // Renseigner la cellule du joueur actif
   jouer (joueur) {
     for (let i = 0; i < 10; i++) {
       for (let j = 0; j < 10; j++) {
@@ -165,7 +165,7 @@ const tableau = {
       celNvArme.arme = celJoueur.joueur.arme;
       celJoueur.joueur.arme = nvArme;
       tableau.modifierCellule(celNvArme);
-      SonNvArme.play();
+      sonNvArme.play();
     }
     monTableau[nvAbs][nvOrd].joueur = celJoueur.joueur;
     const nvCelJoueur = monTableau[nvAbs][nvOrd];
